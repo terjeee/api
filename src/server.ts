@@ -11,4 +11,9 @@ app.get("/", (req: Request, res: Response) => {
   res.status(200).send({ status: "success", message: "hei" });
 });
 
+// TODO: FIX CONSOLE.LOG(NODE_ENV)
+if (process.env.NODE_ENV === "development") console.log("✅ ENV: DEVELOPMENT");
+if (process.env.NODE_ENV === "production") console.log("✅ ENV: PRODUCTION");
+console.log(process.env.NODE_ENV);
+
 app.listen(port, () => console.log(`✅ SERVER @ https://localhost:${port}`));
