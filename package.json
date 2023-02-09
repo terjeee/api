@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "commonjs",
   "scripts": {
-    "start:dev": "set NODE_ENV=development && nodemon ./src/server.ts",
-    "start:prod": "set NODE_ENV=production && nodemon ./src/server.ts",
+    "dev": "set NODE_ENV=development && nodemon ./src/server.ts",
+    "prod": "set NODE_ENV=production && nodemon ./src/server.ts",
     "build": "rimraf dist && npx tsc"
   },
   "author": "",
