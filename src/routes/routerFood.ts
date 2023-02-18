@@ -11,7 +11,7 @@ const router: Router = express.Router();
 // ROUTES // ROUTES //
 
 router.route("/recipes").get(controllerFood.getRecipes).post(controllerFood.postRecipe);
-router.route("/recipes/:id").get(controllerFood.getRecipeId).patch(controllerFood.patchRecipe);
+router.route("/recipes/:id").get(controllerFood.getRecipeById).patch(controllerFood.patchRecipe);
 
 // EXPORT // EXPORT //
 // EXPORT // EXPORT //

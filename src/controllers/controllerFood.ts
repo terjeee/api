@@ -5,7 +5,7 @@ async function getRecipes(request: Request, response: Response) {
   response.send({ status: "success", message: "getRecipes" });
 }
 
-async function getRecipeId(request: Request, response: Response) {
+async function getRecipeById(request: Request, response: Response) {
   console.log("getRecipeId");
   response.send({ status: "success", message: "getRecipeId" });
 }
@@ -20,4 +20,4 @@ async function patchRecipe(request: Request, response: Response) {
   response.send({ status: "success", message: "patchRecipe" });
 }
 
-export default { getRecipes, getRecipeId, postRecipe, patchRecipe };
+export default { getRecipes, getRecipeById, postRecipe, patchRecipe };
