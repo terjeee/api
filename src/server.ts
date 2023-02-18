@@ -1,10 +1,10 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import app from "./app";
+import api from "./api";
 
 const port: Number = Number(process.env.PORT) || 3000;
 
-app.listen(port, () => {
+api.listen(port, () => {
   console.log(`✅ SERVER @ https://localhost:${port}`);
 });
