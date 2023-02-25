@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 
-import routerAuth from "./routes/routerAuth";
 import routerFood from "./routes/routerFood";
 
 const api = express();
@@ -24,8 +23,6 @@ api.use(express.json());
 // ROUTES //
 
 api.use("/api/v1/food", routerFood);
-// api.use("/api/v1/auth", routerAuth);
-// api.use("/api/v1/projects", routerProjects )
 
 api.use("*", (req, res, next) => {
   res.status(404).send({ status: "error", message: "Endpoint doesn't exist." });
