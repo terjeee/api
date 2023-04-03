@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 
 import routerFood from "./routes/routerFood";
+import errorHandler from "./middleware/errorHandler";
 
 const api = express();
 
@@ -23,12 +24,16 @@ api.use(express.json());
 // ROUTES //
 
 api.use("/api/v1/food", routerFood);
-
 api.use("*", (req, res, next) => {
-  res.status(404).send({ status: "error", message: "Endpoint doesn't exist." });
+  res.status(404).send({
+    status: "error",
+    message: "Endpoint doesn't exist.",
+  });
 });
 
-// ERROR //
-// ERROR //
+// ERROR HANDLER //
+// ERROR HANDLER //
+
+api.use(errorHandler);
 
 export default api;
