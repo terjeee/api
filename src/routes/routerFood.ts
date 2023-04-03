@@ -1,5 +1,6 @@
 import express, { Router } from "express";
 
+import tryCatch from "../utils/tryCatch";
 import * as controllerFood from "../controllers/controllerFood";
 
 const router: Router = express.Router();
@@ -10,8 +11,8 @@ const router: Router = express.Router();
 // ROUTES // ROUTES //
 // ROUTES // ROUTES //
 
-router.route("/recipes").get(controllerFood.getAllRecipes);
-router.route("/recipes/:id").get(controllerFood.getRecipeById);
+router.route("/recipes").post(tryCatch(controllerFood.postRecipe)).get(tryCatch(controllerFood.getRecipes));
+router.route("/recipes/:id").get(tryCatch(controllerFood.getRecipeById));
 
 // EXPORT // EXPORT //
 // EXPORT // EXPORT //
