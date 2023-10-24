@@ -1,5 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
+// GIT
+
 const ingredientSchema = new mongoose.Schema(
   {
     ingredient: { type: String, required: [true, "Ingredient is required :)"] },
